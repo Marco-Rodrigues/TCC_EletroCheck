@@ -1,4 +1,11 @@
 ﻿
+ @model LoginViewModel
+
+
+@{
+   
+    Layout = null;
+}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -38,18 +45,22 @@
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
+                                    <input type="hidden" asp-for="ReturnUrl" />
                                     <div class="text-center">
                                         <h1 class="h4 text-black-900 mb-4">Bem vindo de volta!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form asp-controller="Account" asp-action="Login" method="post" class="user">
+
                                         <div class="form-group">
-                                            <input type="emailId" class="form-control form-control-user"
+                                            <input asp-for="UserName" class="form-control form-control-user"
                                                    id="exampleInputEmail" aria-describedby="emailHelp"
                                                    placeholder="Entre com o seu e-mail...">
+                                            <span asp-validation-for="UserName" class="text-danger"></span>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
+                                            <input asp-for="Password" class="form-control form-control-user"
                                                    id="exampleInputPassword" placeholder="Senha">
+                                            <span asp-validation-for="Password" class="text-danger" text-align: justify></span>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -59,21 +70,16 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+
+                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Login">
+
                                         <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
+                                        
                                     </form>
-                                    <hr>
-                                    <div class="text-center">
+                                    
+                                 @*   <div class="text-center">
                                         <a class="small" href="forgot-password.html">Esqueceu a senha?</a>
-                                    </div>
+                                    </div>*@
                                     <div class="text-center">
                                         <a class="small" asp-area="" asp-controller="Account" asp-action="Register">Não possue conta?</a>
                                     </div>
@@ -89,11 +95,10 @@
 
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
-                &copy; 2023 - EletroCheck - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                &copy; 2023 - EletroCheck
             </div>
         </div>
 
-        @RenderBody()
     </div>
 
 
@@ -106,7 +111,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
-    
+
 </body>
 
 </html>

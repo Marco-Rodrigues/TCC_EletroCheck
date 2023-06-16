@@ -30,7 +30,7 @@
     --warning: #f6c23e;
     --danger: #e74a3b;
     --light: #f8f9fc;
-    --dark: #5a5c69;
+    --dark: #0b0b0c;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
     --breakpoint-md: 768px;
@@ -6444,7 +6444,7 @@ a.bg-light:focus, a.bg-light:hover, button.bg-light:focus, button.bg-light:hover
 }
 
 .bg-dark {
-    background-color: #5a5c69 !important
+    background-color: #0b0b0c !important
 }
 
 a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
@@ -10310,7 +10310,7 @@ a:focus {
     }
 
 .topbar {
-    height: 4.375rem
+    height: 35px;
 }
 
     .topbar #sidebarToggleTop {

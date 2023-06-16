@@ -1,6 +1,5 @@
-﻿
-<!DOCTYPE html>
-<html lang="pt-br">
+﻿<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -10,15 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>EletroCheck - Login</title>
+    <title>SB Admin 2 - Login</title>
 
     <!-- Custom fonts for this template-->
-    <link href="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="~/New Template/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -39,27 +38,28 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-black-900 mb-4">Bem vindo de volta!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
                                     <form class="user">
                                         <div class="form-group">
-                                            <input type="emailId" class="form-control form-control-user"
+                                            <input type="email" class="form-control form-control-user"
                                                    id="exampleInputEmail" aria-describedby="emailHelp"
-                                                   placeholder="Entre com o seu e-mail...">
+                                                   placeholder="Enter Email Address...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                   id="exampleInputPassword" placeholder="Senha">
+                                                   id="exampleInputPassword" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 <label class="custom-control-label" for="customCheck">
-                                                    Remember  Me
+                                                    Remember
+                                                    Me
                                                 </label>
                                             </div>
                                         </div>
-                                        <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-primary btn-user btn-block">
+                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                         <hr>
@@ -72,10 +72,10 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Esqueceu a senha?</a>
+                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" asp-area="" asp-controller="Account" asp-action="Register">Não possue conta?</a>
+                                        <a class="small" href="register.html">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>
@@ -87,27 +87,18 @@
 
         </div>
 
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                &copy; 2023 - EletroCheck - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </div>
-
-        @RenderBody()
     </div>
 
-
     <!-- Bootstrap core JavaScript-->
-    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
-    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
-    
+    <script src="js/sb-admin-2.min.js"></script>
+
 </body>
 
 </html>
-

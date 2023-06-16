@@ -7,16 +7,90 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\**" />
+    <Compile Remove="Views\HomePB1\**" />
+    <Compile Remove="Views\Login\**" />
+    <Compile Remove="Views\Pessoas\**" />
+    <Compile Remove="Views\UsuarioConta\**" />
+    <Compile Remove="Views\Usuarios\**" />
+    <Compile Remove="wwwroot\css\**" />
+    <Compile Remove="wwwroot\imagens\**" />
+    <Compile Remove="wwwroot\images\**" />
+    <Compile Remove="wwwroot\js\**" />
+    <Compile Remove="wwwroot\lib\**" />
     <Compile Remove="wwwroot\NovaPasta\**" />
+    <Content Remove="Pages\**" />
+    <Content Remove="Views\HomePB1\**" />
+    <Content Remove="Views\Login\**" />
+    <Content Remove="Views\Pessoas\**" />
+    <Content Remove="Views\UsuarioConta\**" />
+    <Content Remove="Views\Usuarios\**" />
+    <Content Remove="wwwroot\css\**" />
+    <Content Remove="wwwroot\imagens\**" />
+    <Content Remove="wwwroot\images\**" />
+    <Content Remove="wwwroot\js\**" />
+    <Content Remove="wwwroot\lib\**" />
     <Content Remove="wwwroot\NovaPasta\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <EmbeddedResource Remove="Views\HomePB1\**" />
+    <EmbeddedResource Remove="Views\Login\**" />
+    <EmbeddedResource Remove="Views\Pessoas\**" />
+    <EmbeddedResource Remove="Views\UsuarioConta\**" />
+    <EmbeddedResource Remove="Views\Usuarios\**" />
+    <EmbeddedResource Remove="wwwroot\css\**" />
+    <EmbeddedResource Remove="wwwroot\imagens\**" />
+    <EmbeddedResource Remove="wwwroot\images\**" />
+    <EmbeddedResource Remove="wwwroot\js\**" />
+    <EmbeddedResource Remove="wwwroot\lib\**" />
     <EmbeddedResource Remove="wwwroot\NovaPasta\**" />
+    <None Remove="Pages\**" />
+    <None Remove="Views\HomePB1\**" />
+    <None Remove="Views\Login\**" />
+    <None Remove="Views\Pessoas\**" />
+    <None Remove="Views\UsuarioConta\**" />
+    <None Remove="Views\Usuarios\**" />
+    <None Remove="wwwroot\css\**" />
+    <None Remove="wwwroot\imagens\**" />
+    <None Remove="wwwroot\images\**" />
+    <None Remove="wwwroot\js\**" />
+    <None Remove="wwwroot\lib\**" />
     <None Remove="wwwroot\NovaPasta\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\CadastroGeralController.cs" />
+    <Compile Remove="Controllers\Exemplo01Controller.cs" />
+    <Compile Remove="Controllers\HomePB1.cs" />
+    <Compile Remove="Controllers\Login.cs" />
+    <Compile Remove="Controllers\UsuarioContaController.cs" />
+    <Compile Remove="Models\CadastroContaConsumo.cs" />
+    <Compile Remove="Models\PowerBiAuthService.cs" />
+    <Compile Remove="Models\UserPost.cs" />
+    <Compile Remove="Models\Usuario.cs" />
+    <Compile Remove="ViewsModels\CadastroViewModel.cs" />
+    <Compile Remove="ViewsModels\UsuarioContaViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Account\Cadastro.cshtml" />
+    <Content Remove="Views\Account\Index.cshtml" />
+    <Content Remove="Views\Home\DadosPessoais.cshtml" />
+    <Content Remove="Views\Home\Login.cshtml" />
     <Content Remove="Views\Home\Privacy.cshtml" />
+    <Content Remove="Views\Shared\_CadastroLayout.cshtml" />
+    <Content Remove="Views\Shared\_Layout.cshtml" />
+    <Content Remove="Views\Shared\_Login.cshtml" />
+    <Content Remove="Views\Shared\_LoginPartial.cshtml" />
+    <Content Remove="Views\Shared\_LoginTemplate.cshtml" />
+    <Content Remove="Views\Shared\_LoginTmp.cshtml" />
     <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\img\LOGIN_BG.png" />
     <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\img\LOGIN_BG.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Shared\_CadastroLayout.cshtml.css" />
+    <None Remove="Views\Shared\_Layout.cshtml.css" />
+    <None Remove="Views\Shared\_LoginTmp.cshtml.css" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,29 +99,32 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="6.0.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.31" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
-    <PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
-    <PackageReference Include="xunit.extensibility.execution" Version="2.4.2" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.53.0" />
+    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="2.29.0" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="2.10.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.14" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.core" Version="2.4.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Migrations\" />
     <Folder Include="Models\" />
-    <Folder Include="ViewsModels\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
     <Folder Include="wwwroot\lib\bootstrap\" />
+    <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
     <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
     <Folder Include="wwwroot\lib\jquery-validation\" />

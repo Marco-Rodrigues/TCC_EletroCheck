@@ -1,0 +1,38 @@
+﻿
+@model UsuarioContaViewModel
+
+<h1>Criar Registro com Informações de Usuário e Conta</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label for="UserName">Nome de Usuário:</label>
+        <input type="text" id="UserName" name="UserName" class="form-control" value="@Model.UserName" />
+    </div>
+    <div class="form-group">
+        <label for="FirsName">Primeiro Nome:</label>
+        <input type="text" id="FirstName" name="FirstName" class="form-control" value="@Model.FirstName" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Segundo Nome:</label>
+        <input type="text" id="LastName" name="LastName" class="form-control" value="@Model.LastName" />
+    </div>
+    <div class="form-group">
+        <label for="Password">Senha:</label>
+        <input type="password" id="UserName" name="Senha" class="form-control" value="@Model.Password" />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email:</label>
+        <input type="text" id="Email" name="Email" class="form-control" value="@Model.Email" />
+    </div>
+    <div class="form-group">
+        <label for="UrlPowerBI">URL:</label>
+        <input type="url" id="url" name="UrlIframe" class="form-control" value="@Model.UrlIframePowerBI" />
+    </div>
+    <div class="form-group">
+        <label for="IdentificadorContaConsumo">Identificador de Conta de Consumo:</label>
+        <input type="text" id="IdentificadorContaConsumo" name="IdentificadorContaConsumo" class="form-control" value="@Model.IdentificadorContaConsumo" />
+    </div>
+    <!-- Adicione outros campos do formulário conforme necessário -->
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
