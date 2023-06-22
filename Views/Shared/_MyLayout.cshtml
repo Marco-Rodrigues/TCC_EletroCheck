@@ -1,8 +1,6 @@
 ﻿@using EletroCheck.Context;
 @using Microsoft.AspNetCore.Identity;
-
-
-
+@model List<ApplicationUser>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,9 +11,8 @@
     <meta name="description" content="">
     <meta name="author" content="Marco Rodrigues">
 
-    <title>EletroChek - Dashboard</title>
+    <title>EletroChek</title>
 
-    <!-- Custom fonts for this template-->
     <link href="/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
@@ -23,7 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="/New Template/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
-    </head>
+</head>
 
 <body id="page-top">
 
@@ -45,26 +42,32 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
+            @{
+                var administrador = TempData["IsAdministrativo"] as bool?;
+            }
+
+            <!-- Nav Item - Dashboard -->
+            @if (User.Identity.IsAuthenticated && administrador.HasValue && !administrador.Value)
+            {
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                @if (administrador.Value)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("UsersAdmin", "Account")">
+                            <i class="fas fa-fw fa-user-cog"></i>
+                            <span>Painel Administrativo</span>
+                        </a>
+                    </li>
+                }
+            }
 
 
-            <!-- Heading -->
-      
-
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span>
-                </a>
-            </li>
-
-            
-            <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
@@ -80,7 +83,7 @@
             <!-- Main Content -->
 
             <div id="content">
-                @RenderBody()
+
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-dark bg-dark topbar mb-4 static-top shadow">
 
@@ -96,26 +99,15 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline .text-white-50 small">@User.Identity.Name.</span>
+                                <span class="mr-2 d-none d-lg-inline .text-white-50 small">@TempData["firstName"]</span>
                                 <img class="img-profile rounded-circle"
                                      src="~/New Template/startbootstrap-sb-admin-2-gh-pages/img/undraw_profile.svg">
                             </a>
+
+
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                             aria-labelledby="userDropdown">
-                                @*<a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>*@
+                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Sair
@@ -126,107 +118,84 @@
                     </ul>
 
                 </nav>
-                <!-- End of Topbar -->
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        
-                    </div>
-                    <!-- Na sua View -->
-                    @* <iframe title="exemplo" width="100%" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=39bf5644-0d66-47d5-9aad-f28bac899c58&autoAuth=true&ctid=c267dda3-cb7e-4abd-b21b-3150a5b83cd1" frameborder="0" allowFullScreen="true"></iframe>*@
-                    @*<iframe title="exemplo" width="100%" height="541.25" src="@TempData["iframeHtml"]" frameborder="0" allowFullScreen="true"></iframe>*@
 
-                    <iframe title="exemplo" width="100%" height="541.25" src="@Html.Raw(TempData["url"])" frameborder="0" allowFullScreen="true"></iframe>
-
-                </div>
-
-                
-
-                 <p>Informações do Power BI:</p>
-
-
-                
-
-              
-                
-
-                <!-- Content Row -->
-
-                <div class="row">
-
-                    <!-- Area Chart -->
-                    <div class="col-xl-8 col-lg-7">
-
-                        
                     </div>
 
-
-
-                </div>
-                <!-- End of Main Content -->
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            &copy; 2023 - EletroCheck
+                    @if (TempData["url"] == null)
+                    {
+                        <div>
+                            <h3 class="text-center font-weight-bold">Dashboard não encontrado. Aguarde a finalização da ativação da sua conta pelo nosso time</h3>
+                            <div class="broken-wire">
+                                <div class="wire"></div>
+                                <div class="wire-end"></div>
+                            </div>
                         </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
+                    }
 
+                    else
+                    {
+                        <iframe title="exemplo" width="100%" height="750" src="@Html.Raw(TempData["url"])" frameborder="0" allowFullScreen="false"></iframe>
+                    };
+                </div>
+                @RenderBody()
             </div>
-            <!-- End of Content Wrapper -->
-
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        &copy; 2023 - EletroCheck
+                    </div>
+                </div>
+            </footer>
         </div>
-        <!-- End of Page Wrapper -->
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+        <!-- End of Content Wrapper -->
+    </div>
 
-        <!-- Logout Modal-->
 
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Pronto para Sair?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Selecione "Sair" abaixo se estiver pronto para encerrar sua sessão atual.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-primary" asp-controller="Account" asp-action="Logout">Sair</a>
-                        
-                    </div>
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pronto para Sair?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Selecione "Sair" abaixo se estiver pronto para encerrar sua sessão atual.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="submit" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" asp-controller="Account" asp-action="Login">Sair</a>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
-        <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Page level plugins -->
-        <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/chart.js/Chart.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-area-demo.js"></script>
-        <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-pie-demo.js"></script>
+    <!-- Page level plugins -->
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-area-demo.js"></script>
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-pie-demo.js"></script>
 
 
 

@@ -3,7 +3,7 @@ using EletroCheck.ViewsModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EletroCheck.Context
 {
@@ -11,7 +11,7 @@ namespace EletroCheck.Context
     //public class AppDbContext : IdentityDbContext<CadastroViewModel>
 
     {
-        public  AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -20,7 +20,7 @@ namespace EletroCheck.Context
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
 
-           
+            builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
         }
 
         // public DbSet<CadastroContaConsumo> CadastroContaConsumo { get; set; }
@@ -31,5 +31,14 @@ namespace EletroCheck.Context
 
         //
         //public DbSet<Usuario> Usuarios{ get; set; }*@
+    }
+
+    internal class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ApplicationUser>
+    {
+        public void Configure(EntityTypeBuilder<ApplicationUser> builder)
+        {
+            builder.Property(u => u.FirstName).HasMaxLength(255);
+            builder.Property(u => u.LastName).HasMaxLength(255);
+        }
     }
 }

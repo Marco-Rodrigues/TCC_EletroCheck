@@ -68,6 +68,7 @@
     <Compile Remove="Models\UserPost.cs" />
     <Compile Remove="Models\Usuario.cs" />
     <Compile Remove="ViewsModels\CadastroViewModel.cs" />
+    <Compile Remove="ViewsModels\PowerBiViewModel.cs" />
     <Compile Remove="ViewsModels\UsuarioContaViewModel.cs" />
   </ItemGroup>
 
@@ -78,16 +79,37 @@
     <Content Remove="Views\Home\Login.cshtml" />
     <Content Remove="Views\Home\Privacy.cshtml" />
     <Content Remove="Views\Shared\_CadastroLayout.cshtml" />
+    <Content Remove="Views\Shared\_IframePartial.cshtml" />
     <Content Remove="Views\Shared\_Layout.cshtml" />
     <Content Remove="Views\Shared\_Login.cshtml" />
     <Content Remove="Views\Shared\_LoginPartial.cshtml" />
     <Content Remove="Views\Shared\_LoginTemplate.cshtml" />
     <Content Remove="Views\Shared\_LoginTmp.cshtml" />
+    <Content Remove="Views\Shared\_LogoutPartial.cshtml" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\404.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\blank.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\buttons.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\cards.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\charts.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\forgot-password.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\gulpfile.js" />
     <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\img\LOGIN_BG.png" />
     <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\img\LOGIN_BG.svg" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\index.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\LICENSE" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\login.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\PRO_UPGRADE.txt" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\README.md" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\register.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\tables.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\utilities-animation.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\utilities-border.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\utilities-color.html" />
+    <Content Remove="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\utilities-other.html" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ScaffoldingReadMe.txt" />
     <None Remove="Views\Shared\_CadastroLayout.cshtml.css" />
     <None Remove="Views\Shared\_Layout.cshtml.css" />
     <None Remove="Views\Shared\_LoginTmp.cshtml.css" />
@@ -120,17 +142,6 @@
     <Folder Include="Data\" />
     <Folder Include="Migrations\" />
     <Folder Include="Models\" />
-    <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\js\" />
-    <Folder Include="wwwroot\lib\bootstrap\" />
-    <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
-    <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
-    <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
-    <Folder Include="wwwroot\lib\jquery-validation\" />
-    <Folder Include="wwwroot\lib\jquery-validation\dist\" />
-    <Folder Include="wwwroot\lib\jquery\" />
-    <Folder Include="wwwroot\lib\jquery\dist\" />
     <Folder Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\.vs\startbootstrap-sb-admin-2-gh-pages\FileContentIndex\merges\" />
   </ItemGroup>
 
@@ -143,7 +154,6 @@
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\.vs\startbootstrap-sb-admin-2-gh-pages\FileContentIndex\4cafec45-98f5-4eee-935e-c20ecea9ec30.vsidx" />
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\.vs\startbootstrap-sb-admin-2-gh-pages\FileContentIndex\read.lock" />
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\.vs\startbootstrap-sb-admin-2-gh-pages\v17\workspaceFileList.bin" />
-    <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\gulpfile.js" />
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\img\undraw_posting_photo.svg" />
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\img\undraw_profile.svg" />
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\img\undraw_profile_1.svg" />
@@ -156,8 +166,6 @@
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\js\demo\datatables-demo.js" />
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\js\sb-admin-2.js" />
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\js\sb-admin-2.min.js" />
-    <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\LICENSE" />
-    <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\README.md" />
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\scss\navs\_global.scss" />
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\scss\navs\_sidebar.scss" />
     <None Include="wwwroot\New Template\startbootstrap-sb-admin-2-gh-pages\scss\navs\_topbar.scss" />

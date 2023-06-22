@@ -1,0 +1,123 @@
+﻿@model EditUserViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Register</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/New Template/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Editar Usuário</h1>
+                            </div>
+
+                            @* <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                            <input type="text" asp-for="FirstName" class="form-control form-control-user" id="exampleFirstName" placeholder="Primeiro Nome">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-6">
+                            <input type="text" asp-for="LastName" class="form-control form-control-user" id="exampleLastName" placeholder="Sobrenome">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+
+                            </div>
+                            </div>
+                            *@
+                            <form class="col-sm-6 mb-3 mb-sm-0 form-control-user" method="post" action="@Url.Action("SaveUser", new { id = Model.UserId })">
+
+                                <div class="form-group">
+                                    <label for="FirstName">Nome:</label>
+                                    <input type="text" class="form-control form-control-user" id="FirstName" name="FirstName" value="@Model.FirstName" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="LastName">Sobrenome:</label>
+                                    <input type="text" class="form-control form-control-user" id="LastName" name="LastName" value="@Model.LastName" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="UserName">Nome de Usuário:</label>
+                                    <input type="text" class="form-control" id="UserName" name="UserName" value="@Model.UserName" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="UrlPowerBi">URL Power BI:</label>
+                                    <input type="text" class="form-control" id="UrlPowerBi" name="UrlPowerBi" value="@Model.UrlPowerBi" />
+                                </div>
+
+                                <!-- outros campos do formulário -->
+
+                                <button type="submit" class="btn btn-primary btn-user btn-block">Salvar</button>
+                                @using (Html.BeginForm("DeleteUser", "Account", new { id = Model.UserId }, FormMethod.Post))
+                                {
+                                    <button type="submit" class=" btn  btn-user btn-block btn-danger" onclick="return confirm('Tem certeza de que deseja excluir este usuário?')">Excluir</button>
+                                }
+
+                            </form>
+                            <br />
+                           
+                            <hr>
+
+                            // Adicionar um botão de voltar:
+                            <div class="text-center">
+                                <a class="small" href="login.html"></a>
+                                <a class="small" asp-area="" asp-controller="Account" asp-action="Login">Já possui conta? Faça o seu Login!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                &copy; 2023 - EletroCheck
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/New Template/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+

@@ -2,6 +2,7 @@ using EletroCheck.Context;
 using Microsoft.EntityFrameworkCore;
 using EletroCheck.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace EletroCheck
 {
@@ -9,15 +10,25 @@ namespace EletroCheck
     {
         public static void Main(string[] args)
         {
+            
             var builder = WebApplication.CreateBuilder(args);
 
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-           // builder.Services.AddScoped<PowerBiAuthService>();
+            // builder.Services.AddScoped<PowerBiAuthService>();
 
             //builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";
+        options.LogoutPath = "/Account/Logout";
+    });
+
+            builder.Services.AddAuthorization();
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 
 
@@ -54,7 +65,6 @@ namespace EletroCheck
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
@@ -63,6 +73,7 @@ namespace EletroCheck
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Account}/{action=Login}/{id?}");
+
 
             app.Run();
         }
