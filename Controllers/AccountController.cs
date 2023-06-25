@@ -91,13 +91,6 @@ namespace EletroCheck.Controllers
                     }
 
 
-                    //if (string.IsNullOrEmpty(loginVM.ReturnUrl))
-                    //{
-
-                    //    return RedirectToAction("Index", "Home");
-                    //}
-
-                    //return Redirect(loginVM.ReturnUrl);
                 }
             }
             ModelState.AddModelError("", "Falha ao realizar o login!");

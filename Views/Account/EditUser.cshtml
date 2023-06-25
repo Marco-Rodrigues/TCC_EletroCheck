@@ -17,12 +17,10 @@
 
     <title>SB Admin 2 - Register</title>
 
-    <!-- Custom fonts for this template-->
     <link href="~/New Template/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
-    <!-- Custom styles for this template-->
     <link href="~/New Template/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
@@ -33,7 +31,7 @@
 
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
+
                 <div class="row">
                     <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                     <div class="col-lg-7">
@@ -42,18 +40,6 @@
                                 <h1 class="h4 text-gray-900 mb-4">Editar Usuário</h1>
                             </div>
 
-                            @* <div class="form-group row">
-                            <div class="col-sm-6 mb-3 mb-sm-0">
-                            <input type="text" asp-for="FirstName" class="form-control form-control-user" id="exampleFirstName" placeholder="Primeiro Nome">
-                            <span asp-validation-for="FirstName" class="text-danger"></span>
-                            </div>
-                            <div class="col-sm-6">
-                            <input type="text" asp-for="LastName" class="form-control form-control-user" id="exampleLastName" placeholder="Sobrenome">
-                            <span asp-validation-for="LastName" class="text-danger"></span>
-
-                            </div>
-                            </div>
-                            *@
                             <form class="col-sm-6 mb-3 mb-sm-0 form-control-user" method="post" action="@Url.Action("SaveUser", new { id = Model.UserId })">
 
                                 <div class="form-group">
@@ -73,8 +59,6 @@
                                     <input type="text" class="form-control" id="UrlPowerBi" name="UrlPowerBi" value="@Model.UrlPowerBi" />
                                 </div>
 
-                                <!-- outros campos do formulário -->
-
                                 <button type="submit" class="btn btn-primary btn-user btn-block">Salvar</button>
                                 @using (Html.BeginForm("DeleteUser", "Account", new { id = Model.UserId }, FormMethod.Post))
                                 {
@@ -83,14 +67,9 @@
 
                             </form>
                             <br />
-                           
+
                             <hr>
 
-                            // Adicionar um botão de voltar:
-                            <div class="text-center">
-                                <a class="small" href="login.html"></a>
-                                <a class="small" asp-area="" asp-controller="Account" asp-action="Login">Já possui conta? Faça o seu Login!</a>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -9,10 +9,9 @@ namespace EletroCheck.ViewsModels
 
 
     {
-        //[Required(ErrorMessage = "Informe o seu Primeiro Nome")]
         public string FirstName { get; set; }
 
-        //[Required(ErrorMessage = "Informe o seu Sobrenome")]
+     
         [Display(Name = "Sobrenome")]
         public string LastName { get; set; }
 
